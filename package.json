@@ -1,5 +1,5 @@
 {
-  "name": "base_nodejs",
+  "name": "back_nodejs",
   "version": "1.0.0",
   "description": "Base proyect for nodeJs",
   "main": "index.js",
