@@ -1,11 +1,27 @@
-async function getAllItems(body) {
+const axios = require("axios");
+const URL_COVID = process.env.API_COVID;
+
+async function getCovidIndicatorByCountry(params) {
   try {
-    //let listItem = await storage.getList(body);
-    console.log("[./controller/getAllItems]=> list.size: ", listItem.length);
-    return true;
+    const DATA_BY_CONTRIES = "total/country";
+    console.log(`${URL_COVID}/${DATA_BY_CONTRIES}/${params}`);
+    const { data } = await axios.get(
+      `${URL_COVID}/${DATA_BY_CONTRIES}/${params}`
+    );
+    return data;
   } catch (error) {
     throw error;
   }
 }
 
-module.exports = { getAllItems };
+async function getCovidCountries() {
+  try {
+    console.log(`${URL_COVID}/countries`);
+    const { data } = await axios.get(`${URL_COVID}/countries`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+module.exports = { getCovidIndicatorByCountry, getCovidCountries };
