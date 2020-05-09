@@ -8,7 +8,7 @@ router.get("/covid/all/countries", getCovidCountries);
 
 function getCovidIndicatorByCountry(req, res) {
   console.log(
-    "[Init/getCovidIndicatorByCountry]: ------------------------------------"
+    "[Init/getCovidIndicatorByCountries]: ------------------------------------"
   );
   controller
     .getCovidIndicatorByCountry(req.params.country)
